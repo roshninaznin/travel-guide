@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])){
+    header("location: login.php");
+    exit();
+}
+
+if($_SESSION['role'] != 'scout'){
+    header("location: login.php");
+    exit();
+}
+
+if($_SESSION['is_verified'] != 1){
+    header("location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +27,30 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container2">
 
-<h2>Create Post</h2>
+<h1>Create Post</h1>
+<hr>
+<br>
+
 
 <form name="myform"  method="post" action="../controller/PostController.php?action=create" enctype="multipart/form-data" onsubmit="return validate()">
-Title:
-<input name="title">
 
-History:
-<textarea name="short_history"></textarea>
 
-Country:
-<input name="country_representation">
+Title:  <input name="title">
 
-Genre:
-<select name="genre">
+History:  <textarea name="short_history"></textarea>
+
+Country:  <input name="country_representation">
+
+Genre:  <select name="genre">
     <option>beach</option>
     <option>mountain</option>
-</select>
+       </select>
 
-Cost:
-<input name="cost_level">
+Cost:   <input name="cost_level">
 
-Travel:
-<input name="travel_medium_info">
+Travel:  <input name="travel_medium_info">
 
 Image:
 <input type="file" name="image">
