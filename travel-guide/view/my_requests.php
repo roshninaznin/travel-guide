@@ -19,7 +19,7 @@ if($_SESSION['is_verified'] != 1){
     exit();
 }
 ?>
-?>
+
 
 <link rel="stylesheet" href="../assets/style.css">
 
