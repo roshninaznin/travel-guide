@@ -4,11 +4,27 @@ require_once('../model/PostModel.php');
 
 $id = $_GET['id'];
 $data = getPostById($id);
+
+if(!isset($_SESSION['id'])){
+    header("location: login.php");
+    exit();
+}
+
+if($_SESSION['role'] != 'scout'){
+    header("location: login.php");
+    exit();
+}
+
+if($_SESSION['is_verified'] != 1){
+    header("location: login.php");
+    exit();
+}
 ?>
+
 
 <link rel="stylesheet" href="../assets/style.css">
 
-<div class="container">
+<div class="container2">
 
 <h2>Edit Post Request</h2>
 
