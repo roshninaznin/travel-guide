@@ -1,4 +1,14 @@
-<link rel="stylesheet" href="../assets/style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style.css">
+
+</head>
+<body>
+
 
 <div class="container">
 <h1 style="color:white;">Login</h1>
@@ -11,7 +21,12 @@ Username:
 Password:
 <input type="password" name="password">
 
-<input type="submit" value="Login">
+<input type="submit" value="Login" >
 
 </form>
 </div>
+
+
+    
+</body>
+</html>
